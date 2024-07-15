@@ -3,87 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graduación de [Camachito]</title>
+    <title>¡Felicidades!</title>
     <style>
         body {
+            background-color: #222;
+            color: #fff;
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            text-align: center;
             margin: 0;
             padding: 0;
         }
         
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-        
-        main {
+        .container {
             max-width: 800px;
-            margin: 20px auto;
+            margin: 0 auto;
             padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         
-        #mensaje {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        #contador {
-            text-align: center;
-        }
-        
-        #countdown {
+        header h1 {
             font-size: 36px;
-            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .content {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>¡Felicidades por tu graduación!</h1>
-    </header>
-    <main>
-        <section id="mensaje">
-            <p>¡Hola princesa!</p>
-            <p>Quería dedicarte esta página especial para celebrar tu graduación.</p>
-            <p>¡Eres increíble y estoy muy orgulloso de ti!</p>
-        </section>
-        <section id="contador">
-            <h2>Faltan para tu graduación:</h2>
-            <div id="countdown"></div>
-        </section>
-    </main>
+    <div class="container">
+        <header>
+            <h1>¡Felicidades por tu graduación!</h1>
+            <p>Esta página es para ti, con todo mi cariño.</p>
+        </header>
+        <main>
+            <section class="content">
+                <p id="mensaje">Te felicito de todo corazón por este gran logro. Eres increíble y estoy muy orgulloso(a) de ti.</p>
+                <button onclick="cambiarMensaje()">Cambiar mensaje</button>
+            </section>
+        </main>
+        <footer>
+            <p>Hecho con ❤️ por [Tu Nombre]</p>
+        </footer>
+    </div>
 
     <script>
-        // Función para calcular el tiempo restante hasta la fecha de graduación
-        function calcularTiempoRestante() {
-            const fechaGraduacion = new Date('2024-07-14'); // Cambia la fecha por la fecha de graduación de tu novia
-        
-            const ahora = new Date();
-            const diferencia = fechaGraduacion.getTime() - ahora.getTime();
-        
-            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
-        
-            return { dias, horas, minutos, segundos };
+        function cambiarMensaje() {
+            var mensajes = [
+                "Que este día sea solo el comienzo de muchos éxitos más. Te amo.",
+                "Eres mi orgullo y mi inspiración. Felicidades en tu graduación.",
+                "Nuestro futuro juntos será tan brillante como tu logro de hoy."
+            ];
+
+            var indice = Math.floor(Math.random() * mensajes.length);
+            document.getElementById("mensaje").textContent = mensajes[indice];
         }
-        
-        // Función para actualizar el contador en la página
-        function actualizarContador() {
-            const tiempo = calcularTiempoRestante();
-        
-            document.getElementById('countdown').innerHTML = `${tiempo.dias}d ${tiempo.horas}h ${tiempo.minutos}m ${tiempo.segundos}s`;
-        }
-        
-        // Actualizar el contador cada segundo
-        setInterval(actualizarContador, 1000);
     </script>
 </body>
 </html>
+
+  
