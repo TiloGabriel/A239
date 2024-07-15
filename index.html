@@ -37,6 +37,27 @@
             margin-top: 20px;
         }
         
+        .mensaje {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .boton {
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .boton:hover {
+            background-color: #d32f2f;
+        }
+        
         footer {
             margin-top: 20px;
             font-size: 14px;
@@ -52,8 +73,11 @@
         </header>
         <main>
             <section class="content">
-                <p id="mensaje">Te felicito de todo corazón por este gran logro. Eres increíble y estoy muy orgulloso(a) de ti.</p>
-                <button onclick="cambiarMensaje()">Cambiar mensaje</button>
+                <p class="mensaje" id="mensaje">Te felicito de todo corazón por este gran logro. Eres increíble y estoy muy orgulloso(a) de ti.</p>
+                <button class="boton" onclick="cambiarMensaje()">Cambiar mensaje</button>
+            </section>
+            <section>
+                <img src="corazon.png" alt="Corazón" width="100">
             </section>
         </main>
         <footer>
@@ -64,9 +88,9 @@
     <script>
         function cambiarMensaje() {
             var mensajes = [
-                "Que este día sea solo el comienzo de muchos éxitos más. Te amo.",
-                "Eres mi orgullo y mi inspiración. Felicidades en tu graduación.",
-                "Nuestro futuro juntos será tan brillante como tu logro de hoy."
+                "Muchas felicidades mi niña, por fin adios prepa, hola vida de adulto",
+                "Estoy tan feliz de poder estar presente en uno de tus muchos logros que te esperan",
+                "Te amo mucho mi princesa de ojitos bellos, feliz de ser el afortunado que veas con amor"
             ];
 
             var indice = Math.floor(Math.random() * mensajes.length);
@@ -75,3 +99,4 @@
     </script>
 </body>
 </html>
+
