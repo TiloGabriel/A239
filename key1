@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduación de [Camachito]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        #mensaje {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        #contador {
+            text-align: center;
+        }
+        
+        #countdown {
+            font-size: 36px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>¡Felicidades por tu graduación!</h1>
+    </header>
+    <main>
+        <section id="mensaje">
+            <p>¡Hola princesa!</p>
+            <p>Quería dedicarte esta página especial para celebrar tu graduación.</p>
+            <p>¡Eres increíble y estoy muy orgulloso de ti!</p>
+        </section>
+        <section id="contador">
+            <h2>Faltan para tu graduación:</h2>
+            <div id="countdown"></div>
+        </section>
+    </main>
+
+    <script>
+        // Función para calcular el tiempo restante hasta la fecha de graduación
+        function calcularTiempoRestante() {
+            const fechaGraduacion = new Date('2024-07-14'); // Cambia la fecha por la fecha de graduación de tu novia
+        
+            const ahora = new Date();
+            const diferencia = fechaGraduacion.getTime() - ahora.getTime();
+        
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+        
+            return { dias, horas, minutos, segundos };
+        }
+        
+        // Función para actualizar el contador en la página
+        function actualizarContador() {
+            const tiempo = calcularTiempoRestante();
+        
+            document.getElementById('countdown').innerHTML = `${tiempo.dias}d ${tiempo.horas}h ${tiempo.minutos}m ${tiempo.segundos}s`;
+        }
+        
+        // Actualizar el contador cada segundo
+        setInterval(actualizarContador, 1000);
+    </script>
+</body>
+</html>
